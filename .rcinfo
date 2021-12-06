@@ -1,0 +1,8 @@
+---
+cache_addresses:
+- http://192.168.3.207:8080
+primary_repo: https://github.com/imWildCat/DemoXcodeRemoteCache.git
+primary_branch: main
+mode: producer
+xccc_file: ".rc/xccc"
+remote_commit_file: ".rc/arc.rc"
