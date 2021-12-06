@@ -13,9 +13,11 @@
 		5E21E644275E39BC005EC21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21E642275E39BC005EC21B /* Main.storyboard */; };
 		5E21E646275E39BD005EC21B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E21E645275E39BD005EC21B /* Assets.xcassets */; };
 		5E21E649275E39BD005EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E21E647275E39BD005EC21B /* LaunchScreen.storyboard */; };
+		C5BB0CAC03196F4C13CD042B /* Pods_DemoXcodeRemoteCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE767C68711A54BE91B56DA /* Pods_DemoXcodeRemoteCache.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FE767C68711A54BE91B56DA /* Pods_DemoXcodeRemoteCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoXcodeRemoteCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E21E639275E39BC005EC21B /* DemoXcodeRemoteCache.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoXcodeRemoteCache.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E21E63C275E39BC005EC21B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E21E63E275E39BC005EC21B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		5E21E645275E39BD005EC21B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E21E648275E39BD005EC21B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E21E64A275E39BD005EC21B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655A4802F01D11B432778F92 /* Pods-DemoXcodeRemoteCache.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoXcodeRemoteCache.debug.xcconfig"; path = "Target Support Files/Pods-DemoXcodeRemoteCache/Pods-DemoXcodeRemoteCache.debug.xcconfig"; sourceTree = "<group>"; };
+		A16084AD9CD54FF6B38EDEDB /* Pods-DemoXcodeRemoteCache.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoXcodeRemoteCache.release.xcconfig"; path = "Target Support Files/Pods-DemoXcodeRemoteCache/Pods-DemoXcodeRemoteCache.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5BB0CAC03196F4C13CD042B /* Pods_DemoXcodeRemoteCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				5E21E63B275E39BC005EC21B /* DemoXcodeRemoteCache */,
 				5E21E63A275E39BC005EC21B /* Products */,
+				A1C4B4E95EF33977C2D6B0A8 /* Pods */,
+				91324340F0DC4DBE086AEF04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = DemoXcodeRemoteCache;
 			sourceTree = "<group>";
 		};
+		91324340F0DC4DBE086AEF04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE767C68711A54BE91B56DA /* Pods_DemoXcodeRemoteCache.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1C4B4E95EF33977C2D6B0A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				655A4802F01D11B432778F92 /* Pods-DemoXcodeRemoteCache.debug.xcconfig */,
+				A16084AD9CD54FF6B38EDEDB /* Pods-DemoXcodeRemoteCache.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E21E64D275E39BD005EC21B /* Build configuration list for PBXNativeTarget "DemoXcodeRemoteCache" */;
 			buildPhases = (
+				361B13056980AB1DBA62B9E2 /* [CP] Check Pods Manifest.lock */,
 				5E21E635275E39BC005EC21B /* Sources */,
 				5E21E636275E39BC005EC21B /* Frameworks */,
 				5E21E637275E39BC005EC21B /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		361B13056980AB1DBA62B9E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoXcodeRemoteCache-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E21E635275E39BC005EC21B /* Sources */ = {
@@ -284,6 +335,7 @@
 		};
 		5E21E64E275E39BD005EC21B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 655A4802F01D11B432778F92 /* Pods-DemoXcodeRemoteCache.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +354,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.catstudio.DemoXcodeRemoteCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -312,6 +366,7 @@
 		};
 		5E21E64F275E39BD005EC21B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A16084AD9CD54FF6B38EDEDB /* Pods-DemoXcodeRemoteCache.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,6 +385,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.catstudio.DemoXcodeRemoteCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
