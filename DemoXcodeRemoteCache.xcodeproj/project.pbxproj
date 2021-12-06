@@ -98,10 +98,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E21E64D275E39BD005EC21B /* Build configuration list for PBXNativeTarget "DemoXcodeRemoteCache" */;
 			buildPhases = (
+				498A8262F499E66058A78FF3 /* [RC] RemoteCache_prebuild */,
 				361B13056980AB1DBA62B9E2 /* [CP] Check Pods Manifest.lock */,
 				5E21E635275E39BC005EC21B /* Sources */,
 				5E21E636275E39BC005EC21B /* Frameworks */,
 				5E21E637275E39BC005EC21B /* Resources */,
+				F5298BAB22449421F76FE953 /* [RC] RemoteCache_postbuild */,
+				709172050AB9E6315E9CD441 /* [RC] RemoteCache_mark */,
 			);
 			buildRules = (
 			);
@@ -180,6 +183,56 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		498A8262F499E66058A78FF3 /* [RC] RemoteCache_prebuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/prebuild.d";
+			files = (
+			);
+			inputPaths = (
+				/Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache/xcremotecache/xcprebuild,
+			);
+			name = "[RC] RemoteCache_prebuild";
+			outputPaths = (
+				"$(TARGET_TEMP_DIR)/rc.enabled",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
+		};
+		709172050AB9E6315E9CD441 /* [RC] RemoteCache_mark */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				/Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache/xcremotecache/xcprepare,
+			);
+			name = "[RC] RemoteCache_mark";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\" mark --configuration \"$CONFIGURATION\" --platform \"$PLATFORM_NAME\"";
+		};
+		F5298BAB22449421F76FE953 /* [RC] RemoteCache_postbuild */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			dependencyFile = "$(TARGET_TEMP_DIR)/postbuild.d";
+			files = (
+			);
+			inputPaths = (
+				/Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache/xcremotecache/xcpostbuild,
+			);
+			name = "[RC] RemoteCache_postbuild";
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(PLATFORM_PREFERRED_ARCH).swiftmodule.md5",
+				"$(TARGET_BUILD_DIR)/$(MODULES_FOLDER_PATH)/$(PRODUCT_MODULE_NAME).swiftmodule/$(PLATFORM_PREFERRED_ARCH)-$(LLVM_TARGET_TRIPLE_VENDOR)-$(SWIFT_PLATFORM_TARGET_PREFIX)$(LLVM_TARGET_TRIPLE_SUFFIX).swiftmodule.md5",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SCRIPT_INPUT_FILE_0\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -355,18 +408,15 @@
 				);
 				LIBTOOL = $SRCROOT/XCRC/xclibtool;
 				MARKETING_VERSION = 1.0;
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
-					"-fdebug-prefix-map=$(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)",
-				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map $(SRCROOT)=$(XCREMOTE_CACHE_FAKE_SRCROOT)";
+				OTHER_CFLAGS = "$(inherited) -fdebug-prefix-map=/Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache=$(XCRC_FAKE_SRCROOT)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -debug-prefix-map /Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache=$(XCRC_FAKE_SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = app.catstudio.DemoXcodeRemoteCache;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_EXEC = $SRCROOT/XCRC/xcswiftc;
+				SWIFT_EXEC = /Users/wildcat/Developer/xcodeProjects/Demo/DemoXcodeRemoteCache/xcremotecache/xcswiftc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				XCRC_FAKE_SRCROOT = /xxxxxxxxxx;
 				XCREMOTE_CACHE_FAKE_SRCROOT = /xxxxxxxxxx;
 			};
 			name = Debug;
